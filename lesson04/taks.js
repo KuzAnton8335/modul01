@@ -1,6 +1,4 @@
-const max = 0;
-const min = 0;
-const rain = Math.random(Math.round() * max) + min;
+const rain = Math.random(Math.round())
 
 if (rain >= 1) {
 	console.log("Пошёл дождь. Возьмите зонт!");
