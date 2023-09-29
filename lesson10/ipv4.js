@@ -24454,6 +24454,11 @@ const result = listIPv4.reduce((acc, item) => {
 	return [...acc, item];
 }, []);
 
-console.log(result);
+// console.log(result);
 console.log(result.length);
+
+const uniquenIp = [...new Set(listIPv4)];
+for (let item of uniquenIp) {
+	console.log(item);
+}
 
