@@ -1,5 +1,5 @@
 const cart = {
-	items: [33],
+	items: [],
 	totalPrice: 0,
 	count: 3,
 
@@ -31,40 +31,45 @@ const increaseCount = () => {
 }
 increaseCount();
 
-const add = {
-	names: 'fruits',
-	price: 0,
-	countAdd: 1
-}
+// const add = {
+// 	names: 'fruits',
+// 	price: 0,
+// 	countAdd: 1
+// }
 
-const addOne = {
-	names: 'bannans',
-	price: 2,
-	countAdd: 3
-}
+// const addOne = {
+// 	names: 'bannans',
+// 	price: 2,
+// 	countAdd: 3
+// }
 
-const addTwo = {
-	names: 'Milk',
-	price: 10,
-	countAdd: 5
-}
+// const addTwo = {
+// 	names: 'Milk',
+// 	price: 10,
+// 	countAdd: 5
+// }
 
-cart.items.push(add);
-cart.items.push(addOne);
-cart.items.push(addTwo);
+
+cart.items.add = function (key, value) {
+	this[key] = value;
+};
+
+cart.items.add("items", "2");
+cart.items.add("count", "7");
+cart.items.add("totalPrice", "30");
+cart.items.add("names", "fruits");
 console.log(cart);
 
 const print = () => {
 	const itemsStr = JSON.stringify(cart[items]);
-	console.log(itemsStr);
-
 }
-print();
 
-const clear = () => {
-	console.log(cart.items.length = 0);
-	console.log(cart.count.length = 0);
-}
-clear();
+
+
+// const clear = () => {
+// 	console.log(cart.items.length = 0);
+// 	console.log(cart.count.length = 0);
+// }
+// clear();
 
 
