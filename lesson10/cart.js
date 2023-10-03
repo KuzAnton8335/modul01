@@ -3,33 +3,37 @@ const cart = {
 	totalPrice: 0,
 	count: 3,
 
-	get calculate() {
+	get calculateItemPrice() {
 		return `${this.items * this.count}`;
 	},
+
+	get getTotalPrice() {
+		return `${this.totalPrice}`
+	},
+
+	get increaseCount() {
+		return `${this.count += 2}`
+	}
+
 }
 
-console.log(cart.calculate);
 
-const items = 'items';
-let count = 'count';
-const cartPrice = 'totalPrice';
+// const getTotalPrice = () => {
+// 	console.log(cart[cartPrice]);
+// }
+// getTotalPrice();
 
-const getTotalPrice = () => {
-	console.log(cart[cartPrice]);
-}
-getTotalPrice();
-
-const calculateItemPrice = () => {
-	console.log(cart[items] * cart[count]);
-}
-calculateItemPrice();
-cart[cartPrice] = calculateItemPrice();
+// const calculateItemPrice = () => {
+// 	console.log(cart[items] * cart[count]);
+// }
+// calculateItemPrice();
+// cart[cartPrice] = calculateItemPrice();
 
 
-const increaseCount = () => {
-	console.log(cart[count] += 2);
-}
-increaseCount();
+// const increaseCount = () => {
+// 	console.log(cart[count] += 2);
+// }
+// increaseCount();
 
 // const add = {
 // 	names: 'fruits',
@@ -37,17 +41,17 @@ increaseCount();
 // 	countAdd: 1
 // }
 
-// const addOne = {
-// 	names: 'bannans',
-// 	price: 2,
-// 	countAdd: 3
-// }
+const addOne = {
+	names: 'bannans',
+	price: 2,
+	countAdd: 3
+}
 
-// const addTwo = {
-// 	names: 'Milk',
-// 	price: 10,
-// 	countAdd: 5
-// }
+const addTwo = {
+	names: 'Milk',
+	price: 10,
+	countAdd: 5
+}
 
 
 cart.items.add = function (key, value) {
@@ -60,11 +64,15 @@ cart.items.add("totalPrice", "30");
 cart.items.add("names", "fruits");
 console.log(cart);
 
-const print = () => {
-	const itemsStr = JSON.stringify(cart[items]);
-}
+// const print = (arg) => {
+// 	const itemsStr = JSON.stringify(arg);
+// }
+// print(cart[items]);
 
-
+const print = arg => JSON.stringify(arg);
+console.log(print(cart.calculateItemPrice));
+console.log(print(cart.getTotalPrice));
+console.log(print(cart.increaseCount));
 
 // const clear = () => {
 // 	console.log(cart.items.length = 0);
