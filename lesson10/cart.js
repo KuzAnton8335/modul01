@@ -69,6 +69,13 @@ console.log(cart);
 // }
 // print(cart[items]);
 
+
+const print = arg => JSON.stringify(arg);
+console.log(print(cart.calculateItemPrice));
+console.log(print(cart.getTotalPrice));
+console.log(print(cart.increaseCount));
+
+
 const clear = () => {
 	console.log(cart.items.length = 0);
 	console.log(cart.count.length = 0);
@@ -76,10 +83,15 @@ const clear = () => {
 }
 clear();
 
-const print = arg => JSON.stringify(arg);
-console.log(print(cart.calculateItemPrice));
-console.log(print(cart.getTotalPrice));
-console.log(print(cart.increaseCount));
+// const clearcart = (cart) => {
+// 	for (let key in cart) {
+// 		delete cart[key];
+// 	}
+// }
+// clearcart(cart);
+// console.log(cart);
+
+
 
 
 
