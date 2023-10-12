@@ -62,7 +62,7 @@ cart.items.add("items", "2");
 cart.items.add("count", "7");
 cart.items.add("totalPrice", "30");
 cart.items.add("names", "fruits");
-console.log(cart);
+console.table(cart);
 
 // const print = (arg) => {
 // 	const itemsStr = JSON.stringify(arg);
@@ -76,20 +76,20 @@ console.log(print(cart.getTotalPrice));
 console.log(print(cart.increaseCount));
 
 
-const clear = () => {
-	console.log(cart.items.length = 0);
-	console.log(cart.count.length = 0);
-	console.log(cart.totalPrice.length = 0);
-}
-clear();
-
-// const clearcart = (cart) => {
-// 	for (let key in cart) {
-// 		delete cart[key];
-// 	}
+// const clear = () => {
+// 	console.log(cart.items.length = 0);
+// 	console.log(cart.count.length = 0);
+// 	console.log(cart.totalPrice.length = 0);
 // }
-// clearcart(cart);
-// console.log(cart);
+// clear();
+
+const clearcart = (cart) => {
+	for (let key in cart) {
+		delete cart[key];
+	}
+}
+clearcart(cart);
+console.log(cart);
 
 
 
