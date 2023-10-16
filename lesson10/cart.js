@@ -13,6 +13,19 @@ const cart = {
 
 	get increaseCount() {
 		return `${this.count += 2}`
+	},
+
+	get clearCart() {
+		return `${this.items.length = 0},
+      ${this.totalPrice.length = 0},
+		${this.count.length = 0},`
+	},
+
+	get printCart() {
+		const print = arg => JSON.stringify(arg);
+		return `${this.print.cart[items]},
+		        ${this.print.cart[totalPrice]},
+				  ${this.print.cart[count]}`
 	}
 
 }
@@ -70,10 +83,10 @@ console.table(cart);
 // print(cart[items]);
 
 
-const print = arg => JSON.stringify(arg);
-console.log(print(cart.calculateItemPrice));
-console.log(print(cart.getTotalPrice));
-console.log(print(cart.increaseCount));
+// const print = arg => JSON.stringify(arg);
+// console.log(print(cart.calculateItemPrice));
+// console.log(print(cart.getTotalPrice));
+// console.log(print(cart.increaseCount));
 
 
 // const clear = () => {
@@ -83,13 +96,13 @@ console.log(print(cart.increaseCount));
 // }
 // clear();
 
-const clearcart = (cart) => {
-	for (let key in cart) {
-		delete cart[key];
-	}
-}
-clearcart(cart);
-console.log(cart);
+// const clearcart = (cart) => {
+// 	for (let key in cart) {
+// 		delete cart[key];
+// 	}
+// }
+// clearcart(cart);
+// console.log(cart);
 
 
 
