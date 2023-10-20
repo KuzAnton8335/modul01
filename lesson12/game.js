@@ -6,21 +6,11 @@ const max = Math.floor(100);
 const random = Math.floor(Math.random() * (max - min)) + min;
 console.log(random);
 
-function getName() {
-	if (name !== undefined && name !== '') {
-		return name;
-	}
-	const newName = prompt('Привет! Как тебя зовут ?');
+let name = prompt('Привет! Как тебя зовут?');
 
-	if (newName !== null && newName !== '') {
-		name = newName;
-		return getName();
-	} else {
-		return '';
-	}
+while (name == '' || name == null) {
+	name = prompt('Привет! Как тебя зовут?');
 }
-const name = getName();
-
 
 alert(name + ', давай с тобой сыграем в игру. Я загадал число от 1 до 100. Попробуй отгадать его. После каждой попытки я скажу "мало", "много" или "верно". Когда тебе надоест играть, нажми кнопку Esc на клавиатуре. Поехали!');
 
@@ -38,7 +28,7 @@ if (answer == null) {
 
 } else {
 
-	if (answer != number && answer != null) {
+	while (answer != number && answer != null) {
 
 		(answer < number) ? answer = prompt('Мало. Попробуй ещё раз!') :
 
@@ -54,7 +44,6 @@ if (answer == null) {
 
 	} else if (answer == null) {
 
-	}
-	alert('Пока! Как нибудь сыграем ещё. ^_^');
+	} alert('Пока! Как нибудь сыграем ещё. ^_^');
 
 }
