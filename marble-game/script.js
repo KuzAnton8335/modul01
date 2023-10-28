@@ -1,0 +1,2 @@
+const gameStart = gameModule();
+gameStart();
