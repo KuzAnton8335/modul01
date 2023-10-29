@@ -2,7 +2,6 @@ const gameModule = (() => {
 	let playerBalls = 5;
 	let botBalls = 5;
 
-
 	const getPlayerBalls = () => {
 		return playerBalls;
 	}
@@ -11,16 +10,21 @@ const gameModule = (() => {
 		return botBalls;
 	}
 
-	const playRound = (guess) => {
-		const playerGuess = parseInt(prompt("Введите число от 1 до " + playerBalls));
-		const botGuess = Math.floor(Math.random() * 2) + 1;
+	const playRound = () => {
+		while (playerBalls > 0 && botBalls > 0) {
+			const playerGuess = parseInt(prompt("Введите число от 1 до " + playerBalls));
+			const botGuess = Math.random() < 0.5 ? 'четное' : 'нечетное';
 
-		if (playerGuess % 2 === botGuess % 2) {
-			botBalls += playerBalls;
-			playerBalls = 0;
-		} else {
-			playerBalls += botBalls;
-			botBalls = 0;
+			if (playerGuess % 2 === 0 && botGuess === 'четное') {
+				botBalls += playerGuess;
+				playerBalls -= playerGuess;
+			} else if (playerGuess % 2 !== 0 && botGuess === 'нечетное') {
+				botBalls += playerGuess;
+				playerBalls -= playerGuess;
+			} else {
+				playerBalls += playerGuess;
+				botBalls -= playerGuess;
+			}
 		}
 		checkGameOver();
 	}
@@ -57,3 +61,4 @@ console.log("У бота осталось:", gameModule.getBotBalls(), "шари
 gameModule.restartGame();
 console.log("У вас на старте:", gameModule.getPlayerBalls(), "шариков");
 console.log("У бота на старте:", gameModule.getBotBalls(), "шариков");
+
