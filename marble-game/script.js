@@ -1,2 +1,2 @@
-const gameStart = gameModule();
+const gameStart = window.gameModule();
 gameStart();

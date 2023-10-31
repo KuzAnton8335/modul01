@@ -48,8 +48,9 @@ const gameModule = (() => {
 		playRound: playRound,
 		restartGame: restartGame
 	};
+	window.gameModule = game;
 })();
-window.gameModule();
+
 
 console.log("У вас на старте:", gameModule.getPlayerBalls(), "шариков");
 console.log("У бота на старте:", gameModule.getBotBalls(), "шариков");
