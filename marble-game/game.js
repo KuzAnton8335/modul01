@@ -11,6 +11,7 @@ const gameModule = (() => {
 	}
 
 	const playRound = () => {
+		alert(`У вас на старте: ${getPlayerBalls()} шариков`);
 		while (playerBalls > 0 && botBalls > 0) {
 			const playerGuess = parseInt(prompt("Введите число от 1 до " + playerBalls));
 			const botGuess = Math.random() < 0.5 ? 'четное' : 'нечетное';
@@ -25,6 +26,7 @@ const gameModule = (() => {
 				playerBalls += playerGuess;
 				botBalls -= playerGuess;
 			}
+			alert(`У вас осталось:, ${gameModule.getPlayerBalls()} шариков`);
 		}
 		checkGameOver();
 	}
@@ -63,3 +65,6 @@ gameModule.restartGame();
 console.log("У вас на старте:", gameModule.getPlayerBalls(), "шариков");
 console.log("У бота на старте:", gameModule.getBotBalls(), "шариков");
 
+// console.log("У вас осталось:", getPlayerBalls(), "шариков");
+// console.log("У бота осталось:", getBotBalls(), "шариков");
+// alert(`У бота осталось:${getBotBalls()} шариков`);
