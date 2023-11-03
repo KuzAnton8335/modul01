@@ -10,11 +10,22 @@ const gameModule = (() => {
 		return botBalls;
 	}
 
+
+
 	const playRound = () => {
 		alert(`У вас на старте: ${getPlayerBalls()} шариков`);
 		alert(`У бота на старте:${getBotBalls()} шариков`);
 		while (playerBalls > 0 && botBalls > 0) {
-			const playerGuess = parseInt(prompt("Введите число от 1 до " + playerBalls));
+			let playerGuess = parseInt(prompt("Введите число от 1 до " + playerBalls));
+			while (playerGuess < 1 || playerGuess > 5) {
+				if (isNaN(playerGuess)) {
+					alert('Это не число')
+				} else if (playerGuess < 1 || playerGuess > 5) {
+					alert('Число должно быть от 1 до 5 включительно!');
+				}
+				playerGuess = +prompt('Попробуйте еще раз');
+			}
+			alert(`Вы ввели число: ${playerGuess}`);
 			const botGuess = Math.random() < 0.5 ? 'четное' : 'нечетное';
 			if (playerGuess % 2 === 0 && botGuess === 'четное') {
 				botBalls += playerGuess;
